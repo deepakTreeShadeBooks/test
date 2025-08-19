@@ -13,5 +13,15 @@
         {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
-</body>
-</html>
+
+    <h2>Submitted Messages</h2>
+    <ul>
+        {% for msg in messages %}
+            <li>{{ msg.text|linebreaksbr }} <small style="color:gray;">({{ msg.created_at }})</small></li>
+        {% empty %}
+            <li>No messages yet.</li>
+        {% endfor %}
+    </ul>
+
+    </body>
+    </html>
